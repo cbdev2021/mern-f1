@@ -9,7 +9,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         //target: 'http://localhost:5000',
-        target: 'https://mern-b1.onrender.com/',        
+        //target: 'https://mern-b1.onrender.com/',    
+        target: process.env.REACT_APP_API_URL || 'http://localhost:10000',
         changeOrigin: true,
       },
     },
