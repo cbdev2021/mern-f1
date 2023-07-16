@@ -1,31 +1,31 @@
 import { apiSlice } from './apiSlice';
-const USERS_URL = '/api/users';
+const USERS_URL = process.env.REACT_APP_API_URL+'/api/users';
 
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: process.env.REACT_APP_API_URL+`${USERS_URL}/auth`,
+        url: `${USERS_URL}/auth`,
         method: 'POST',
         body: data,
       }),
     }),
     logout: builder.mutation({
       query: () => ({
-        url: process.env.REACT_APP_API_URL+`${USERS_URL}/logout`,
+        url: `${USERS_URL}/logout`,
         method: 'POST',
       }),
     }),
     register: builder.mutation({
       query: (data) => ({
         url: `${USERS_URL}`,
-        method: process.env.REACT_APP_API_URL+'POST',
+        method: 'POST',
         body: data,
       }),
     }),
     updateUser: builder.mutation({
       query: (data) => ({
-        url: process.env.REACT_APP_API_URL+`${USERS_URL}/profile`,
+        url: `${USERS_URL}/profile`,
         method: 'PUT',
         body: data,
       }),
