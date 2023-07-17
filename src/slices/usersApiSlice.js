@@ -1,5 +1,5 @@
 import { apiSlice } from './apiSlice';
-const USERS_URL = 'https://mern-b1.onrender.com/api/users';
+const USERS_URL = '/api/users';
 
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

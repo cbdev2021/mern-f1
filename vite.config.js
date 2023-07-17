@@ -8,10 +8,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        //target: 'http://localhost:5000',
-        //target: 'https://mern-b1.onrender.com/',    
-        //target: process.env.REACT_APP_API_URL || 'http://localhost:10000',
-        target: process.env.REACT_APP_API_URL,
+        //target: 'https://mern-b1.onrender.com/', // funciona react local hacia render
+        //target: 'http://localhost:5000',       // aputando a server local
+        target: process.env.REACT_APP_API_URL, // no funciona en local
         changeOrigin: true,
       },
     },
